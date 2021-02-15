@@ -41,6 +41,7 @@ def main():
                         print("found:", child)
                         f = open(child, "r")
                         first = f.readline().replace('\n','').replace('\r','')
+                        f.close()
                         if("#!/bin/sh" == first):
                             print("check:", child)
                             subprocess.run([shellcheck,child])
